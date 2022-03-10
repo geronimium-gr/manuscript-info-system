@@ -3,27 +3,33 @@ import { addDoc, CollectionReference } from "firebase/firestore";
 import './CreateContent.css'
 
 const CreateContent = (props: { thesisCollection: CollectionReference<unknown>; }) => {
+    //Use State for Title, Abstract, Adviser
     const [newTitle, setTitle] = useState("");
     const [newAbstract, setAbstract] = useState("");
     const [newAdviser, setAdviser] = useState("");
 
 
+    //Records the value of input: Title
     const titleHandler = (event: any) => {
         setTitle(event.target.value);
     }
 
+    //Records the value of input: Abstract
     const abstractHandler = (event: any) => {
         setAbstract(event.target.value);
     }
 
+    //Records the value of input: Adviser
     const adviserHandler = (event: any) => {
         setAdviser(event.target.value);
     }
 
+    //The submit form function
     const submitHandler = async (event: any) => {
         event.preventDefault();
         await addDoc(props.thesisCollection, {thesisTitle: newTitle, abstract: newAbstract, adviser: newAdviser});
 
+        //Reset inputs
         setTitle('');
         setAbstract('');
         setAdviser('');

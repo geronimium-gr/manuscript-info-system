@@ -7,10 +7,14 @@ import DisplayContent from './components/Home/DisplayContent';
 
 
 const App = () => {
+
+  //Use State for Thesis Collection
   const [thesis, setThesis] : any = useState([]);
+
+  //Reference of Thesis Collesction
   const thesisCollectionRef = collection(db, "thesis");
 
-
+  //Use to render the list of Thesis Content
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(thesisCollectionRef);

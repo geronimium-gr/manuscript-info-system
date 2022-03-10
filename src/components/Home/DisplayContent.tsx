@@ -7,6 +7,7 @@ import './DisplayContent.css';
 
 const DisplayContent = (props: { thesisList: any[]; }) => {
 
+    //Sample updating in Thesis Content
     const updateThesisContent = async (id: string, surname: string) => {
         const thesisDoc = doc(db, "thesis", id);
         const newData = {thesisTitle: surname + " (Just Changed)"};
@@ -16,6 +17,7 @@ const DisplayContent = (props: { thesisList: any[]; }) => {
         window.location.reload();
     }
 
+    //Delete Thesis content
     const deleteThesisContent = async (id: string) => {
         const thesisDoc = doc(db, "thesis", id);
         await deleteDoc(thesisDoc);
@@ -32,6 +34,7 @@ const DisplayContent = (props: { thesisList: any[]; }) => {
                     <div key={thesis.id} className="thesis-item__holder">
                         <h2>Title: {thesis.thesisTitle}</h2>
                         <h3>Abstract: {thesis.abstract}</h3>
+                        <h4>Adviser: {thesis.adviser}</h4>
                         <button onClick={() => updateThesisContent(thesis.id, thesis.thesisTitle)}>Change Title</button>
                         <button onClick={() => deleteThesisContent(thesis.id)}>Delete</button>
                     </div>

@@ -1,0 +1,27 @@
+.thesis-item__holder {
+    padding: 1.5rem;
+    margin: 1rem 1rem;
+    background-color: #4b4b4b;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.thesis-item__holder h2, h3 {  
+    color: #fff;
+}
+
+.thesis-item__holder button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 2px solid #fff;
+    background-color: #761da0;
+    color: #fff;
+    border-radius: 12px;
+    margin-right: 1rem;
+}
+
+.thesis-item__holder button:hover,
+.thesis-item__holder button:active {
+    background-color: #8e21c0;
+}
